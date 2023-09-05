@@ -9,6 +9,16 @@ const OrderCard = props => {
     handleDelete
   } = props;
 
+  let renderXMarkIcon;
+  if (handleDelete) {
+    renderXMarkIcon =
+      <button
+        onClick={() => handleDelete(id) }
+      >
+        <XMarkIcon className='h-6 w-6 text-black'></XMarkIcon>
+      </button>
+  }
+
   return (
     <div className="flex justify-between items-center mb-3">
       <div className='flex items-center gap-2'>
@@ -19,11 +29,7 @@ const OrderCard = props => {
       </div>
       <div className='flex items-center gap-2'>
         <p className='text-lg font-medium'>{price}</p>
-        <button
-          onClick={() => handleDelete(id) }
-        >
-          <XMarkIcon className='h-6 w-6 text-black'></XMarkIcon>
-        </button>
+        {renderXMarkIcon}
       </div>
     </div>
   )
