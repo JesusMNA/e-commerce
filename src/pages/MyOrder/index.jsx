@@ -12,7 +12,6 @@ function MyOrder() {
 
   const currentPath = window.location.pathname;
   let index = currentPath.split('/').at(-1);
-  console.log(index)
 
   if (index === 'last') index = order?.length - 1;
   
