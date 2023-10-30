@@ -7,7 +7,8 @@ const Navbar = () => {
   const {
     count,
     openCheckoutSideMenu,
-    closeProductDetail
+    closeProductDetail,
+    setSearchByCategory
   } = useContext(ShoppingCartContext)
 
   const activeStyle = 'underline underline-offset-4'
@@ -23,6 +24,7 @@ const Navbar = () => {
         <li className="font-semibold text-lg">
           <NavLink 
             to='/'
+            onClick={() => setSearchByCategory('')}
             className={({ isActive }) =>
               isActive ? activeStyle : undefined
             }
@@ -32,7 +34,8 @@ const Navbar = () => {
         </li>
         <li>
           <NavLink 
-            to='/all'
+            to='/'
+            onClick={() => setSearchByCategory('')}
             className={({ isActive }) =>
               isActive ? activeStyle : undefined
             }
@@ -43,6 +46,7 @@ const Navbar = () => {
         <li>
           <NavLink 
             to='/clothes'
+            onClick={() => setSearchByCategory('clothing')}
             className={({ isActive }) =>
               isActive ? activeStyle : undefined
             }
@@ -53,6 +57,7 @@ const Navbar = () => {
         <li>
           <NavLink
             to='/electronics'
+            onClick={() => setSearchByCategory('electronics')}
             className={({ isActive }) =>
               isActive ? activeStyle : undefined
             }
@@ -63,6 +68,7 @@ const Navbar = () => {
         <li>
           <NavLink 
             to='/furnitures'
+            onClick={() => setSearchByCategory('jewelery')}
             className={({ isActive }) =>
               isActive ? activeStyle : undefined
             }
@@ -73,6 +79,7 @@ const Navbar = () => {
         <li>
           <NavLink 
             to='/toys'
+            onClick={() => setSearchByCategory('toys')}
             className={({ isActive }) =>
               isActive ? activeStyle : undefined
             }
@@ -83,6 +90,7 @@ const Navbar = () => {
         <li>
           <NavLink 
             to='/others'
+            onClick={() => setSearchByCategory('others')}
             className={({ isActive }) =>
               isActive ? activeStyle : undefined
             }
